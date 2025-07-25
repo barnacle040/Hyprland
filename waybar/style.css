@@ -1,0 +1,64 @@
+@define-color background rgba(30,30,30,0.72);
+@define-color foreground #ebebeb;
+@define-color yellow #f2d297;
+
+* {
+  font-family: JetBrainsMono Nerd Font Propo;
+  font-size: 14px;
+  font-weight: 500;
+  min-height: 0;
+}
+
+#waybar {
+  background-color: transparent;
+}
+
+#waybar > box {
+  margin: 8px 8px 0 8px;
+}
+
+#workspaces,
+#window,
+#tray,
+#hardware,
+#control,
+#clock {
+  background-color: @background;
+  color: @foreground;
+  padding: 5px 16px;
+  border-radius: 32px;
+}
+
+#hardware #cpu,
+#hardware #temperature,
+#control #battery,
+#control #network,
+#control #bluetooth {
+  margin-right: 16px;
+}
+
+/* Workspaces module is built different */
+
+#workspaces {
+  padding: 0 9px;
+}
+
+#workspaces button {
+  color: @foreground;
+  padding: 0;
+  border-radius: 32px;
+}
+
+#workspaces button.active {
+  color: @yellow;
+}
+
+/* Spacing for long window title */
+#window {
+  margin-right: 8px;
+}
+
+/* Padding for empty window title */
+#waybar.empty #window {
+  padding-right: 8px;
+}

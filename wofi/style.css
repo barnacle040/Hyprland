@@ -1,0 +1,66 @@
+/**
+ * Rofi Theme / Style
+ *
+ * This file defines the visual appearance of Rofi.
+ */
+
+/* Color Definitions */
+@define-color bg0 rgba(18,18,18,0.8);      /* Background color with transparency */
+@define-color bg1 rgba(235,235,235,0.2);   /* Selected item background color with transparency */
+@define-color fg0 #999999;                 /* Foreground/text color for unselected items */
+@define-color fg1 #ebebeb;                 /* Foreground/text color for selected items */
+
+/* Window Properties */
+window {
+  font-size: 13px;
+  font-family: JetBrainsMono Nerd Font Mono;
+  background-color: @bg0;
+  color: @fg0;
+  border-radius: 12px;
+  // IMPORTANT: Do NOT set a 'height' property here if you want dynamic height.
+  // Example of what to avoid (if it were present):
+  // height: 300px;
+  // height: 50%;
+}
+
+/* Outer Box (main container for elements) */
+#outer-box {
+  color: @fg0;
+  // You might want to add padding or margin here if needed
+}
+
+/* Input Field */
+#input {
+  background-color: transparent; /* Transparent background for input */
+  color: @fg0;
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: none;
+}
+
+/* Icon next to input field */
+#input > image.left {
+  margin-right: 10px;
+}
+
+/* Individual Entry (item in the list) */
+#entry {
+  padding: 8px;
+}
+
+/* Selected Entry */
+#entry:selected {
+  background: @bg1; /* Background for the selected item */
+  border-radius: 0px; /* Keep this if you want square selection corners, or adjust */
+}
+
+/* Text of the selected entry */
+#text:selected {
+  color: @fg1; /* Text color for the selected item */
+}
+
+/* Icon for an entry */
+#img {
+  margin-right: 8px; /* Space between icon and text */
+}

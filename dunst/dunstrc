@@ -1,0 +1,131 @@
+# Dunst configuration file
+# Located at ~/.config/dunst/dunstrc
+
+[global]
+  # Display all notifications on the primary output
+  monitor = 0
+
+  # Position of the notification window
+  # For top-right:
+  origin = top-right
+  offset = 15x15  # Margin from the top and right edges (e.g., 15px from top, 15px from right)
+
+  # For bottom-right (to match your previous request for the control center):
+  # origin = bottom-right
+  # offset = 60x15 # Margin from bottom (60px) and right (15px)
+
+  # Width and height of the notification window
+  width = 350
+  height = 100 # Min height, Dunst will expand as needed
+
+  # Maximum number of notifications to show at once
+  max_notifications = 4
+
+  # Duration notifications stay on screen (in milliseconds)
+  # 0 means infinite
+  notification_limit = 0 # No limit on history
+  indicate_hidden = yes # Show a count of hidden notifications
+
+  # Transparency (0-100, 0 is fully transparent, 100 is opaque)
+  # This makes the background of the notification itself transparent
+  # The blur effect is handled by Hyprland's compositor
+  transparency = 0 # Set to 0, as Hyprland's blur will handle the transparency effect
+
+  # Padding inside the notification window
+  padding = 12
+
+  # Horizontal padding between text and icon/buttons
+  horizontal_padding = 12
+
+  # Gap between multiple notifications
+  gap_size = 10
+
+  # Corner radius (for rounded corners)
+  corner_radius = 10
+
+  # Font settings
+  font = Inter 14 # Font family and size
+  line_height = 0 # Auto line height
+  text_color = "#e0e0e0" # Light gray for general text
+
+  # Icon settings
+  icon_position = left
+  icon_padding = 8
+  max_icon_size = 48
+
+  # Border settings
+  frame_width = 1 # Subtle border width
+  frame_color = "#646464" # Subtle gray border color
+
+  # Separator between notifications in history (if enabled)
+  separator_height = 0 # No separator for a cleaner look
+
+  # Timeout for notifications (in seconds)
+  # Default timeout for all notifications, can be overridden by urgency rules
+  timeout = 5
+
+  # Show age of notification (e.g., "5s ago")
+  show_age_col = yes
+
+  # Show indicators for actions (e.g., [A] for action)
+  word_wrap = yes
+  markup = full # Allow Pango markup (bold, italic, color)
+
+  # Follow mouse or keyboard focus
+  follow = mouse # or keyboard, or none
+
+  # History (control center equivalent)
+  history_length = 20 # Number of notifications to keep in history
+  sticky_history = yes # Keep history even after notifications are closed
+
+  # Sort order
+  sort = yes # Sort by urgency then time
+
+  # Browser for opening URLs
+  browser = xdg-open
+
+  # Command to close all notifications
+  close_on_click = yes # Close notification when clicked
+
+  # Commands for actions (e.g., when clicking an action button)
+  # action_icon_theme = Adwaita # Optional: icon theme for action buttons
+
+  # Sound
+  # audio_schmema = default # Requires dunst with pulseaudio support
+  # volume = 1.0
+
+# Rules for different urgency levels
+# These override global settings for specific urgencies
+
+[urgency_low]
+  background = "#282828cc" # Dark, slightly transparent
+  foreground = "#b0b0b0"   # Muted light gray
+  frame_color = "#646464" # Subtle border
+  timeout = 3
+
+[urgency_normal]
+  background = "#282828cc" # Dark, slightly transparent
+  foreground = "#e0e0e0"   # Light gray
+  frame_color = "#808080" # Slightly more visible border
+  timeout = 5
+
+[urgency_critical]
+  background = "#402020cc" # Dark red, slightly transparent
+  foreground = "#ffaaaa"   # Bright red
+  frame_color = "#ff8080" # Red border
+  timeout = 0 # Infinite timeout for critical notifications
+
+# Example rules for specific applications (uncomment and modify as needed)
+# [spotify]
+#   appname = Spotify
+#   background = "#1DB954cc"
+#   foreground = "#ffffff"
+#   icon = /usr/share/icons/hicolor/48x48/apps/spotify.png
+#   timeout = 8
+
+# [terminal]
+#   appname = Alacritty|kitty|gnome-terminal
+#   background = "#303030cc"
+#   foreground = "#ffffff"
+#   timeout = 4
+

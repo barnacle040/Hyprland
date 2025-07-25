@@ -1,0 +1,78 @@
+// -*- mode: jsonc -*-
+{
+  //"layer": "top",
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-right": ["tray", "group/hardware", "group/control", "clock"],
+  "spacing": 8,
+  "hyprland/workspaces": {
+    "active-only": false,
+    "sort-by-number": true,
+    "on-click": "activate",
+    "all-outputs": false,
+    "format": "{icon}",
+    "format-icons": {
+      "active": "󰮯",
+      "default": "•"
+    }
+  },
+  "hyprland/window": {
+    "format": "<span color='#97b4f2'>󰊠</span> {title}",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 14,
+    "spacing": 16
+  },
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": ["cpu", "temperature", "memory"]
+  },
+  "cpu": {
+    "format": "<span color='#b6cad2'>󰍛</span> {usage}%",
+    "interval": 2,
+    "on-click": "kitty -T 'Task Manager' btop"
+  },
+  "temperature": {
+    "format": "<span color='#f2979c'></span> {temperatureC}C",
+    "interval": 2,
+    "on-click": "kitty -T 'Task Manager' btop",
+    "tooltip-format": "Max before throttling: 105 °C"
+  },
+  "memory": {
+    "format": "<span color='#cd97f2'>󰘚</span> {used:.2g}GB",
+    "interval": 2,
+    "on-click": "kitty -T 'Task Manager' btop",
+    "tooltip-format": "Used  : {used}\\nAvail : {avail}\\nTotal : {total}"
+  },
+  "group/control": {
+    "orientation": "horizontal",
+    "modules": ["network", "pulseaudio"]
+  },
+  "network": {
+    "format-ethernet": "<span color='#97d8f2'>󰈀</span>",
+    "format-wifi": "<span color='#97d8f2'>{icon}</span>",
+    "format-disconnected": "<span color='#97d8f2'>󰤭</span>",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "interval": 2,
+    "tooltip-format": "{essid}",
+    "on-click": "kitty -T 'WiFi Manager' impala"
+  },
+  "pulseaudio": {
+    "format": "<span color='#f2979c'>{icon}</span> {volume}%",
+    "format-muted": "<span color='#f2979c'>󰖁</span> {volume}%",
+    "format-bluetooth": "<span color='#f2979c'>{icon}</span> {volume}%",
+    "format-bluetooth-muted": "<span color='#f2979c'>󰖁</span> {volume}%",
+    "format-icons": {
+      "headphone": "󰋋",
+      "phone": "󰏲",
+      "portable": "󰏲",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol"
+  },
+  "clock": {
+    "timezone": "Europe/Dublin",
+    "format": "<span color='#f2d297'>󰥔</span> {:%a %b %d %R %p}",
+    "tooltip-format": "<big>{:%Y %B}</big>\\n<tt><small>{calendar}</small></tt>"
+  }
+}
