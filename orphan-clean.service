@@ -1,0 +1,10 @@
+[Unit]
+Description=Remove orphaned packages using pacman
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c "/usr/bin/pacman -Rns $(/usr/bin/pacman -Qtdq)"
+User=root
+ConditionVirtualization=!container
+ConditionFileIsExecutable=/usr/bin/pacman
+ConditionCommand=/usr/bin/pacman -Qtdq
