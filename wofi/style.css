@@ -1,0 +1,62 @@
+/* Wofi theme – matches Waybar dark style */
+
+window {
+    margin: 5px;
+    border: 2px solid rgba(131, 165, 152, 0.4);       /* teal accent from GPU colour */
+    border-radius: 8px;
+    background-color: rgba(30, 30, 30, 0.95);
+    font-family: "FiraCode Nerd Font", "JetBrains Mono", "Font Awesome 6 Free", sans-serif;
+    font-size: 13px;
+    color: #dcdccc;
+}
+
+#input {
+    margin: 8px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(60, 56, 54, 0.8);
+    color: #ebdbb2;
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    background: transparent;
+}
+
+#outer-box {
+    margin: 5px;
+    border: none;
+    background: transparent;
+}
+
+#scroll {
+    margin: 0 5px 5px 5px;
+    border: none;
+}
+
+#text {
+    margin: 5px;
+    color: #dcdccc;
+}
+
+#entry {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: none;
+}
+
+/* Selected item – teal/green highlight */
+#entry:selected {
+    background-color: rgba(131, 165, 152, 0.6);        /* matches GPU blue-teal */
+}
+
+#entry:selected #text {
+    color: #1d2021;                                    /* dark text on bright bg */
+}
+
+/* Optional subtle hover for unselected entries */
+#entry:hover {
+    background-color: rgba(60, 56, 54, 0.5);
+}
