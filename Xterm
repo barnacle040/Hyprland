@@ -1,0 +1,10 @@
+xterm*VT100.translations:	#override Ctrl Shift <Key> A: select-all() \n\
+ Shift Ctrl <Key>C: copy-selection(CLIPBOARD) \n\
+ Shift Ctrl <Key>V: insert-selection(CLIPBOARD)
+xterm*foreground:	white
+xterm*cursorColor:	white
+xterm*keepClipboard:	true
+xterm*geometry:	120x35
+xterm*faceName:	monospace
+xterm*background:	black
+xterm*selectToClipboard:	true
